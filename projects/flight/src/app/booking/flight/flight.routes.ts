@@ -8,6 +8,7 @@ import { provideEffects } from "@ngrx/effects";
 import { TicketEffects } from "./+state/ngrx-store/effects";
 import { provideState } from "@ngrx/store";
 import { ticketFeature } from "./+state/ngrx-store/reducer";
+import { provideTicketStore } from "./+state/ngrx-signals/tickets.signal.store";
 
 
 export const FLIGHT_ROUTES: Routes = [
@@ -15,8 +16,9 @@ export const FLIGHT_ROUTES: Routes = [
     path: '',
     component: FlightBookingComponent,
     providers: [
-      provideState(ticketFeature),
-      provideEffects([TicketEffects]),
+      provideTicketStore(),
+      // provideState(ticketFeature),
+      // provideEffects([TicketEffects]),
     ],
     children: [
       {

@@ -4,13 +4,14 @@ import { ticketActions } from "./actions";
 import { ticketFeature } from "./ngrx-store/reducer";
 import { FlightFilter } from "../logic/model/flight-filter";
 import { Flight } from "../logic/model/flight";
+import { injectTicketStore } from "./ngrx-signals/tickets.signal.store";
 
 
 export function injectTicketsFacade() {
-  const store = inject(Store);
+  const store = injectTicketStore();
 
   return {
-    flights: store.selectSignal(ticketFeature.selectFlights),
+    flights: store.flightEntities,
     search: (filter: FlightFilter) =>
       store.dispatch(ticketActions.flightsLoad(filter)),
     update: (flight: Flight) =>
