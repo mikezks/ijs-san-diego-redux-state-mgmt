@@ -5,9 +5,9 @@ import { FlightEditComponent } from "./features/flight-edit/flight-edit.componen
 import { FlightSearchComponent } from "./features/flight-search/flight-search.component";
 import { flightsResolverConfig } from "./logic/data-access/flight.resolver";
 import { provideEffects } from "@ngrx/effects";
-import { TicketEffects } from "./+state/effects";
+import { TicketEffects } from "./+state/ngrx-store/effects";
 import { provideState } from "@ngrx/store";
-import { ticketFeature } from "./+state/reducer";
+import { ticketFeature } from "./+state/ngrx-store/reducer";
 
 
 export const FLIGHT_ROUTES: Routes = [

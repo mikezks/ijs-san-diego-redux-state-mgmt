@@ -1,6 +1,6 @@
 import { createFeature, createReducer, createSelector, on } from "@ngrx/store";
-import { ticketActions } from "./actions";
-import { initialTicketState } from "./model";
+import { ticketActions } from "../actions";
+import { initialTicketState } from "../model";
 
 
 export const ticketFeature = createFeature({

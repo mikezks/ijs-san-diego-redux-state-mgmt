@@ -1,8 +1,8 @@
 import { map, switchMap } from 'rxjs';
 import { Injectable, inject } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { FlightService } from "../logic/data-access/flight.service";
-import { ticketActions } from "./actions";
+import { FlightService } from "../../logic/data-access/flight.service";
+import { ticketActions } from "../actions";
 
 @Injectable({
   providedIn: 'root'
